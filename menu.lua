@@ -60,7 +60,7 @@ function Menu()
 
 
 
-    if LEORestrict() then
+    if exports['river-duty']:dutystatus('onduty') then
         local LEOMenu = _MenuPool:AddSubMenu(MainMenu, 'LEO Toolbox', 'Law Enforcement Related Menu', true)
         LEOMenu:SetMenuWidthOffset(Config.MenuWidth)
             local LEOActions = _MenuPool:AddSubMenu(LEOMenu, 'Actions', '', true)
@@ -484,7 +484,7 @@ function Menu()
 
 
 
-    if FireRestrict() then
+    if exports['river-duty']:dutystatus('fire') then
         local FireMenu = _MenuPool:AddSubMenu(MainMenu, 'Fire Toolbox', 'Fire Related Menu', true)
         FireMenu:SetMenuWidthOffset(Config.MenuWidth)
             local FireActions = _MenuPool:AddSubMenu(FireMenu, 'Actions', '', true)
